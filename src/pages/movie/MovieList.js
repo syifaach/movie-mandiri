@@ -4,13 +4,13 @@ import { Link, useNavigate } from "react-router-dom"
 
 function Search(props) {
     const onResult = (event) => {
-        if (props.data) {
-            const dataFilter = props.data.filter(data => {
-                return data.age <= event.target.value
+        let dataFilter = props.data
+        if (props.data && event.target.value != '') {
+            dataFilter = props.data.filter(data => {
+                return Number(data.age) <= Number(event.target.value)
             })
-
-            props.dataChange(dataFilter)
         }
+        props.dataChange(dataFilter)
     }
 
     return (
