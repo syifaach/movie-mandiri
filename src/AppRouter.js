@@ -9,6 +9,10 @@ export let routes = [
         element: <SideBar/>,
         children: [
             {
+                index : true,
+                element: <MovieList/>
+            },
+            {
                 path: "/movie/insert",
                 element: <MovieInsert/>
             },
@@ -17,7 +21,6 @@ export let routes = [
                 element: <MovieUpdate/>
             },
             {
-                index: true,
                 path: "/movie/list",
                 element: <MovieList/>
             }
