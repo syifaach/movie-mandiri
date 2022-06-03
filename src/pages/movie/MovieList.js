@@ -72,10 +72,10 @@ function MovieList() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map(result => {
+                        {data.map((result, idx) => {
                             return (
                                 <tr key={result.id}>
-                                    <th scope="row">{result.id}</th>
+                                    <th scope="row">{idx+1}</th>
                                     <td>{result.title}</td>
                                     <td>{result.synopsis}</td>
                                     <td>{result.genre}</td>
