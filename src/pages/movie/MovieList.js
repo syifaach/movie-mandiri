@@ -14,8 +14,8 @@ function Search(props) {
     }
 
     return (
-        <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={onResult} />
+        <form className="d-flex col-md-3">
+            <input className="form-control" type="search" placeholder="Search" aria-label="Search" onChange={onResult} />
         </form>
     )
 }
@@ -48,13 +48,17 @@ function MovieList() {
 
     return (
         <>
-            <div>
-                <div className="d-flex flex-row">
-                    <h5>List Film</h5>
-                    <Link type="button" className="btn btn-success ms-auto" to="/movie/insert"><i className="fa-solid fa-plus me-3"></i>Tambah Film</Link>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="d-flex mb-2 mt-4">
+                        <h5>List Film</h5>
+                        <Link type="button" className="btn btn-success ms-auto" to="/movie/insert"><i className="fa-solid fa-plus me-3"></i>Tambah Film</Link>
+                    </div>
                 </div>
 
-                <Search data={dataFilter} dataChange={dataChange}/>
+                <div className="row">
+                    <Search data={dataFilter} dataChange={dataChange}/>
+                </div>
 
                 <table className="table mt-2">
                     <thead>
@@ -77,7 +81,7 @@ function MovieList() {
                                     <td>{result.genre}</td>
                                     <td>{result.age}</td>
                                     <td className="d-flex flex-row gap-2">
-                                        <button type="button" className="btn btn-warning" onClick={_ => navigate(`/movie/update/${result.id}`)}><i className="fa-solid fa-arrow-up-from-bracket"></i></button>
+                                        <button type="button" className="btn btn-warning" onClick={_ => navigate(`/movie/update/${result.id}`)}><i className="fa-solid fa-pen-to-square"></i></button>
                                         <button type="button" className="btn btn-danger" onClick={() => onDelete(result.id)}><i className="fa-solid fa-trash-can"></i></button>
                                     </td>
                                 </tr>
