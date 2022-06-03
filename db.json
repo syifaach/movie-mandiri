@@ -1,0 +1,25 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Doctor Strange",
+      "synopsis": "Film doctor strange",
+      "genre": "action",
+      "age": 18
+    },
+    {
+      "title": "kkn",
+      "synopsis": "kkn",
+      "genre": "horor",
+      "age": "19",
+      "id": 2
+    },
+    {
+      "title": "the doll",
+      "synopsis": "film horor pokoknya",
+      "genre": "horor",
+      "age": "20",
+      "id": 3
+    }
+  ]
+}
