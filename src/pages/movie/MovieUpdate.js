@@ -6,15 +6,23 @@ import { useNavigate, useParams } from "react-router-dom"
 function MovieUpdate() {
     const { id } = useParams()
     const [data, setData] = useState([])
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, setValue } = useForm()
     const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(`http://localhost:3000/movies/${id}`)
             .then(result => {
                 setData(result.data)
+                setHookForm(result.data)
             })
     }, [])
+
+    const setHookForm = (data) => {
+        setValue('title', data.title)
+        setValue('synopsis', data.synopsis)
+        setValue('genre', data.genre)
+        setValue('age', data.age)
+    }
 
     const onSubmit = (result) => {
         const {title, synopsis, genre, age} = result
@@ -56,7 +64,7 @@ function MovieUpdate() {
                             <div>
                                 <label className="form-label">Umur</label>
                                 <input
-                                    className="form-control" defaultValue={data.age} type="text" name="age" id="age"
+                                    className="form-control" defaultValue={data.age} type="number" name="age" id="age"
                                     {...register("age")}
                                 />
                             </div>

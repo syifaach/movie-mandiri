@@ -61,7 +61,7 @@ function MovieInsert() {
                                 <div>
                                     <label className="form-label">Umur</label>
                                     <input
-                                        className="form-control" value={result.age} type="text" name="age" id="age" disabled
+                                        className="form-control" value={result.age} type="number" name="age" id="age" disabled
                                     />
                                 </div>
                             </div>
@@ -96,7 +96,7 @@ function MovieInsert() {
                             <div>
                                 <label className="form-label">Umur</label>
                                 <input
-                                    className="form-control" type="text" name="age" id="age"
+                                    className="form-control" type="number" name="age" id="age"
                                     {...register("age")}
                                 />
                             </div>
